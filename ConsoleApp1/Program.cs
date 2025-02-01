@@ -15,9 +15,9 @@ namespace ConsoleApp1
             Console.Title = "TO DO LIST APP";
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-             Console.WriteLine("ToDoList\n");
+            Console.WriteLine("ToDoList\n");
             Console.WriteLine("\nKeep Typing your Task\n\nTo End the program and view your tasks, simply press close after all your tasks entered:\n");
-           string data= PressToContinue();
+            string data = PressToContinue();
 
             List<string> tasks;
             tasks = new List<string>();
@@ -25,20 +25,26 @@ namespace ConsoleApp1
 
             string close = "close";
 
-            while(data != close)
+            while (data != close)
             {
-               data= PressToContinue();
+                data = PressToContinue();
                 tasks.Add(data);
             }
-            foreach (var item in tasks.Take(tasks.Count -1))
-            {
-                if (item == close)
-                {
+            //foreach (var item in tasks.Take(tasks.Count -1))
+            //{
+            //    if (item == close)
+            //    {
 
-                }
-                Console.WriteLine("\n"+item + "\n");
+            //    }
+            //    Console.WriteLine("\n\nThis are your tasks:"+item + "\n");
+            //} 
+
+            for (int i = 0; i < tasks.Count - 1; i++)
+            {
+                Console.WriteLine($"\n\n{i + 1}" + " " + tasks[i] + "\n");
             }
 
+            Console.Write("Options:\n");
             Console.ReadLine();
 
         }
