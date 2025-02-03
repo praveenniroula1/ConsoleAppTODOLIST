@@ -44,9 +44,46 @@ namespace ConsoleApp1
                 Console.WriteLine($"\n\n{i + 1}" + " " + tasks[i] + "\n");
             }
 
-            Console.Write("Options:\n");
-            Console.ReadLine();
+            Console.WriteLine("Are You willing to delet any of your task? ");
+            Console.WriteLine("yes or no ");
+            string decision = Console.ReadLine();
+            if (decision == "yes")
+            {
+                Console.WriteLine("You pressed Yes, which number of task You like to delete? ");
+                string whichTask = Console.ReadLine();
+                for (int i = 0; i < tasks.Count - 1; i++)
+                {
+                   int del= Convert.ToInt32(whichTask);
+                    tasks.RemoveAt(del); 
+                    Console.WriteLine($"\n\n{i + 1}" + " " + tasks[i] + "\n");
 
+                }
+
+            }
+            string decisionToDel = Console.ReadLine();
+
+            bool delete = false;
+
+            if (delete)
+            {
+                for (int i = 0; i < tasks.Count - 1; i++)
+                {
+                    Console.WriteLine($"\n\n{i + 1}" + " " + tasks[i] + "\n");
+                }
+            }
+            else
+            {
+                for (int i = 0; i < tasks.Count - 1; i++)
+                {
+                    tasks.RemoveAt(i);
+                    Console.WriteLine($"\n\n{i + 1}" + " " + tasks[i] + "\n");
+
+                }
+            }
+
+
+
+            Console.ReadLine();
         }
 
         public static string PressToContinue()
